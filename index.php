@@ -28,7 +28,7 @@ $fp = fopen("./progress/progress.txt", "r"); //ファイルを開く
         fclose($fp); //ファイルを閉じる
     } else {
         //ファイルが開けなかったとき
-        echo '進捗ゼロです。';
+        echo 'ファイルが開けませんでした。';
     }
     ?>
 </body>
