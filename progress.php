@@ -1,15 +1,15 @@
 <?php
 $fp = fopen("./progress/progress.txt", "r"); //ファイルを開く
-$line = array(); //ファイル内容を1行1要素に格納する配列
-//$line2 = file("./progress/progress.txt");
+//$line = array(); //ファイル内容を1行1要素に格納する配列
+$line2 = file("./progress/progress.txt");
 //var_dump($line2);
 //ファイルが正しく開けたとき
-if ($fp) {
-    while (!feof($fp)) {
-        $line[] = fgets($fp);
-    }
-    fclose($fp);
-}
+// if ($fp) {
+//     while (!feof($fp)) {
+//         $line[] = fgets($fp);
+//     }
+//     fclose($fp);
+// }
 //var_dump($line);
 ?>
 <!DOCTYPE html>
@@ -26,7 +26,7 @@ if ($fp) {
     <h2>進捗状況</h2>
     <?php
     //var_dump(count($line));
-    if (count($line) > 0) {
+    if (count($line2) > 0) {
         /* for ($i = 0; $i < count($line); $i++) {
             if ($i == 0) { //はじめの行はタイトル
                 echo '<h3>' . $line[0] . '</h3>';
@@ -34,7 +34,7 @@ if ($fp) {
                 echo $line[$i] . '<br>';
             }
         }*/
-        foreach ($line as $i => $text) {
+        foreach ($line2 as $i => $text) {
             if ($i == 0) {
                 echo '<h3>' . $text . '</h3>';
             } else {
