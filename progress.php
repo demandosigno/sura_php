@@ -1,7 +1,7 @@
 <?php
-$fp = fopen("./progress/progress.txt", "r"); //ファイルを開く
+$fp = fopen("./progress/progress.md", "r"); //ファイルを開く
 //$line = array(); //ファイル内容を1行1要素に格納する配列
-$line2 = file("./progress/progress.txt");
+$line2 = file("./progress/progress.md");
 //var_dump($line2);
 //ファイルが正しく開けたとき
 // if ($fp) {
