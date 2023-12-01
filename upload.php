@@ -42,6 +42,7 @@ if (isset($_FILES['image']) && is_uploaded_file($_FILES['image']['tmp_name'])) {
 <body>
     <h1>画像アップロード</h1>
     <p><a href="index.php">トップページに戻る</a></p>
+    <p><a href="photo.php">アルバムに戻る</a></p>
     <?php
     if ($msg) {
         echo '<p>' . $msg . '</p>';

@@ -1,5 +1,5 @@
 <?php
-//$info = file_get_contents("./progress/progress.txt");
+//$info = file_get_contents("./progress/progress.md");
 $fp = fopen("./progress/progress.md", "r"); //ファイルを開く
 ?>
 <!DOCTYPE html>
