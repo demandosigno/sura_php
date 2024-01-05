@@ -1,4 +1,5 @@
 <?php
+include 'includes/login.php';
 // データの受け取り
 $name = $_POST['name'];
 $title = $_POST['title'];
@@ -17,7 +18,10 @@ if (!preg_match("/^[0-9]{4}$/", $pass)) {
     exit();
 }
 
-// データーベースに接続
+// 名前をCookieにセット
+setcookie('name', $name, time() + 60 * 60 * 24 * 30);
+
+// データベースに接続
 $dsn = 'mysql:host=localhost;dbname=sura_php;charset=utf8';
 $user = 'phpusr';
 $password = 'phppass'; // phpusrに設定したパスワード

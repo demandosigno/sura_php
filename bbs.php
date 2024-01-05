@@ -1,4 +1,5 @@
 <?php
+include 'includes/login.php';
 // １ページに表示されるコメントの数
 $num = 10;
 
@@ -41,10 +42,11 @@ try {
 </head>
 
 <body>
+    <?php var_dump($_COOKIE['name']); ?>
     <h1>掲示板</h1>
     <p><a href="index.php">トップページに戻る</a></p>
     <form action="write.php" method="post">
-        <p>名前：<input type="text" name="name"></p>
+        <p>名前：<input type="text" name="name" value="<?php echo isset($_COOKIE['name']) ? $_COOKIE['name'] : "" ?>"></p>
         <p>タイトル：<input type="text" name="title"></p>
         <textarea name="body"></textarea>
         <p>削除パスワード（数字4桁）：<input type="text" name="pass"></p>

@@ -1,4 +1,5 @@
 <?php
+include 'includes/login.php';
 //$info = file_get_contents("./progress/progress.md");
 $fp = fopen("./progress/progress.md", "r"); //ファイルを開く
 ?>
@@ -15,6 +16,7 @@ $fp = fopen("./progress/progress.md", "r"); //ファイルを開く
     <h1>PHPの学習</h1>
     <p><a href="photo.php">アルバム</a></p>
     <p><a href="bbs.php">掲示板</a></p>
+    <p><a href="logout.php">ログアウト</a></p>
     <h2>進捗状況</h2>
     <?php
     //var_dump($fp);
