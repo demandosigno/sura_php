@@ -42,11 +42,11 @@ try {
 </head>
 
 <body>
-    <?php var_dump($_COOKIE['name']); ?>
+    <!-- <?php var_dump($_COOKIE['name']); ?> -->
     <h1>掲示板</h1>
     <p><a href="index.php">トップページに戻る</a></p>
     <form action="write.php" method="post">
-        <p>名前：<input type="text" name="name" value="<?php echo isset($_COOKIE['name']) ? $_COOKIE['name'] : "" ?>"></p>
+        <p>名前：<input type="text" name="name" value=<?php echo isset($_COOKIE['name']) ? htmlspecialchars($_COOKIE['name'], ENT_QUOTES, 'UTF-8') : "" ?>></p>
         <p>タイトル：<input type="text" name="title"></p>
         <textarea name="body"></textarea>
         <p>削除パスワード（数字4桁）：<input type="text" name="pass"></p>
@@ -64,9 +64,9 @@ try {
     while ($row = $stmt->fetch()) :
         $title = $row['title'] ? $row['title'] : '（無題）';
     ?>
-        <p>名前：<?php echo $row['name'] ?></p>
-        <p>タイトル：<?php echo $title ?></p>
-        <p><?php echo nl2br($row['body'], false) ?></p>
+        <p>名前：<?php echo htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8') ?></p>
+        <p>タイトル：<?php echo htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?></p>
+        <p><?php echo nl2br(htmlspecialchars($row['body'], ENT_QUOTES, 'UTF-8'), false) ?></p>
         <p><?php echo $row['date'] ?></p>
         <form action="delete.php" method="post">
             <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
