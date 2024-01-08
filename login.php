@@ -32,6 +32,8 @@ if (isset($_SESSION['id'])) {
             // ユーザが存在していたので、セッションにユーザIDをセット
             var_dump($row);
             $_SESSION['id'] = $row['id'];
+            // セッションID再作成
+            session_regenerate_id(true);
             header('Location: index.php');
             exit();
         } else {

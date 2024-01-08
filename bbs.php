@@ -51,6 +51,7 @@ try {
         <textarea name="body"></textarea>
         <p>削除パスワード（数字4桁）：<input type="text" name="pass"></p>
         <p><input type="submit" value="書き込む"></p>
+        <input type="hidden" name="token" value="<?php echo sha1(session_id()); ?>">
     </form>
     <hr>
     <?php

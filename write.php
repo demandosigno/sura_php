@@ -5,6 +5,7 @@ $name = $_POST['name'];
 $title = $_POST['title'];
 $body = $_POST['body'];
 $pass = $_POST['pass'];
+$token = $_POST['token'];
 
 // 必須項目チェック（名前か本文が空ではないか？）
 if ($name == '' || $body == '') {
@@ -14,6 +15,12 @@ if ($name == '' || $body == '') {
 
 // 必須項目チェック（パスワードは4桁の数字か？）
 if (!preg_match("/^[0-9]{4}$/", $pass)) {
+    header('Location: bbs.php');
+    exit();
+}
+
+// CSRF対策：トークンが正しいかどうか
+if ($token != sha1(session_id())) {
     header('Location: bbs.php');
     exit();
 }

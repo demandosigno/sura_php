@@ -3,11 +3,18 @@ include 'includes/login.php';
 // データの受け取り
 $id = intval($_POST['id']);
 $pass = $_POST['pass'];
+$token = $_POST['token'];
 print_r($id);
 print_r($pass);
 
 // 必須項目チェック
 if ($id == '' || $pass == '') {
+    header('Location: bbs.php');
+    exit();
+}
+
+// CSRF対策：トークンが正しいかどうか
+if ($token != sha1(session_id())) {
     header('Location: bbs.php');
     exit();
 }
