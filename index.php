@@ -2,6 +2,8 @@
 include 'includes/login.php';
 //$info = file_get_contents("./progress/progress.md");
 $fp = fopen("./progress/progress.md", "r"); //ファイルを開く
+var_dump(session_id());
+var_dump($_SESSION['id']);
 ?>
 <!DOCTYPE html>
 <html lang="ja">

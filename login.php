@@ -2,6 +2,7 @@
 session_start(); // セッション開始
 
 var_dump($_SESSION['id']);
+var_dump(session_id());
 if (isset($_SESSION['id'])) {
     // セッションにユーザIDがある＝ログインしている
     // トップページに遷移する

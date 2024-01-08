@@ -49,9 +49,13 @@ GETメソッドのスーパーグローバル変数は、内部では連想配�
 * **三項演算子**：条件式 ？ 式１ ： 式２（Trueなら1, Falseなら2を実行）
 * **ceil(数値)**：端数の切り上げ
 * **exit()**：メッセージを出力し、現在のスクリプトを終了する。戻り値はvoid。die()と等価
-* **session_start();**: 
+* **setcookie();**:
 * **$_COOKIE[]**: 
+* **session_start();**: 
 * **$_SESSION[]**: 
+* **unset($_SESSION['hoge'])**:
+* **$_SESSION = array();**:
+* **session_destroy();**: うまく動作しない
 * **htmlspecialchars()**:XSS用エスケープ処理
 * **SQLインジェクション**:
 * **セッションハイジャック**: session_regenerate_id(true);
