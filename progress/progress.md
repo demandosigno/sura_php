@@ -54,4 +54,5 @@ GETメソッドのスーパーグローバル変数は、内部では連想配�
 * **$_SESSION[]**: 
 * **htmlspecialchars()**:XSS用エスケープ処理
 * **SQLインジェクション**:
-* **セッションハイジャック**:
+* **セッションハイジャック**: session_regenerate_id(true);
+* **CSRF**:
