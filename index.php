@@ -17,6 +17,7 @@ var_dump($_SESSION['id']);
 <body>
     <h1>PHPの学習</h1>
     <p><a href="photo.php">アルバム</a></p>
+    <p><a href="resize.php">アルバムリサイズ</a></p>
     <p><a href="bbs.php">掲示板</a></p>
     <p><a href="logout.php">ログアウト</a></p>
     <h2>進捗状況</h2>

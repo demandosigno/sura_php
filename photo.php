@@ -9,7 +9,7 @@ if ($handle = opendir('./photo')) {
     while ($entry = readdir($handle)) {
         var_dump($entry);
         // 「.」および「..」でないとき、ファイル名を配列に追加
-        if ($entry != "." && $entry != "..") {
+        if ($entry != "." && $entry != ".." && strpos($entry, 'thumbs_') !== false) {
             $images[] = $entry;
         }
     }
@@ -50,7 +50,7 @@ if ($handle = opendir('./photo')) {
 
         // 画像の表示
         foreach ($images[$page] as $img) {
-            echo '<img src="./photo/' . $img . '">';
+            echo '<a href="./photo/' . str_replace('thumbs_', '', $img) . '"><img src="./photo/' . $img . '" /></a>';
         }
 
         // ページ数リンク
