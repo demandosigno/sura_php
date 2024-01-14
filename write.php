@@ -26,7 +26,7 @@ if ($token != sha1(session_id())) {
 }
 
 // 名前をCookieにセット
-setcookie('name', $name, time() + 60 * 60 * 24 * 30);
+// setcookie('name', $name, time() + 60 * 60 * 24 * 30);
 
 // データベースに接続
 $dsn = 'mysql:host=localhost;dbname=sura_php;charset=utf8';

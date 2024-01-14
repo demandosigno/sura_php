@@ -33,6 +33,8 @@ if (isset($_SESSION['id'])) {
             // ユーザが存在していたので、セッションにユーザIDをセット
             var_dump($row);
             $_SESSION['id'] = $row['id'];
+            // 名前をCookieにセット
+            setcookie('name', $row['name'], time() + 60 * 60 * 24 * 30);
             // セッションID再作成
             session_regenerate_id(true);
             header('Location: index.php');
@@ -51,7 +53,7 @@ if (isset($_SESSION['id'])) {
     // ログインしていない場合はログインフォームを表示する
 ?>
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="ja">
 
     <head>
         <meta charset="UTF-8">
@@ -68,6 +70,7 @@ if (isset($_SESSION['id'])) {
             <p><input type="submit" value="ログイン"></p>
         </form>
     </body>
+    <a href="register.php">ユーザの新規登録</a>
 
     </html>
 <?php } ?>
