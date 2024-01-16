@@ -1,4 +1,5 @@
 <?php
+include 'includes/login.php';
 $fp = fopen("./progress/progress.md", "r"); //ファイルを開く
 //$line = array(); //ファイル内容を1行1要素に格納する配列
 $line2 = file("./progress/progress.md");
@@ -41,6 +42,8 @@ $line2 = file("./progress/progress.md");
                 echo $text . '<br>';
             }
         }
+        echo '<img src="http://maps.googleapis.com/maps/api/staticmap?center=' . $line2[1] .
+            '&markers=size:mid|color:blue|label:T|' . $line2[1] . '&zoom=15&size=400x400&sensor=false" /><br />';
     } else {
         //ファイルの中身が空だったとき
         echo '進捗ゼロです。';
