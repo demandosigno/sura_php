@@ -65,8 +65,8 @@ if (isset($_SESSION['id'])) {
         <h1>交流サイト</h1>
         <h2>ログイン</h2>
         <form action="login.php" method="POST">
-            <p>ユーザ名：<input type="text" name="name"></p>
-            <p>パスワード：<input type="password" name="password"></p>
+            <p>ユーザ名：<input type="text" name="name" autocomplete=username></p>
+            <p>パスワード：<input type="password" name="password" autocomplete="off"></p>
             <p><input type="submit" value="ログイン"></p>
         </form>
     </body>
